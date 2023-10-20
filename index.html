@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            margin: auto;
+            /* margin-top: 150px; */
+            width: 20vw;
+            height: 80px;
+            display: block;
+            padding: 20px;
+            overflow: scroll;
+        }
+        .txt{
+            margin-top: 150px;
+        }
+    </style>
 </head>
+
 <body>
     <center>
-    <button onclick="trim()">TEXT</button>
+        <h1 class="txt">TRIM BOX</h1>
+        <div class="container">
+            <input type="text" id="tr">
+            <button onclick="trim()">TRIM</button>
+            <h1 id="out"></h1>
+        </div>
     </center>
 
 
     <script>
-        function trim(){
-            let user = prompt("Enter text")
-            user.trim()
-            document.write(`<h1>${user}</h1>`)
+        function trim() {
+            let user = document.getElementById("tr").value
+            output = user.trim()
+            document.getElementById("out").innerText = (output)
         }
     </script>
 </body>
+
 </html>
